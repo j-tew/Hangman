@@ -220,7 +220,7 @@ while word.count("-") < len(word):
     # Hangman scenes
     print(scene[key])
     # Word to be guessed
-    print(f"Secret Word: ", *board)
+    print(f"Secret Word: ", *board, "\n")
     # If dude is complete or if the word is complete break the loop
     if key == 6 or "_" not in board:
         break
