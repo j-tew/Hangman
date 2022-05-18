@@ -41,8 +41,11 @@ class Hangman():
                 selection = int(input(self.menu))
                 # Set the word from the text files
                 with open(self.categories[selection], "r") as wordlist:
-                    self.word = random.choice(wordlist.readlines())
+                    # All caps for consistency
+                    self.word = random.choice(wordlist.readlines()).upper()
+                    # Create a board and map for tracking letter guesses
                     self.board = {index: letter for index, letter in enumerate(self.word)}
+                    # Map contains boolean values for guessed letters
                     self.board_map = {index: not letter.isalpha() for index, letter in self.board.items()}
             # Handle invalid selections
             except KeyError:
@@ -57,6 +60,7 @@ class Hangman():
     # Displaying a Game Board
     def display_board(self):
         '''Use map and board to display hidden letters'''
+        # Map values determine which letters are hidden
         hidden_letters = [self.board[i] if self.board_map[i] else '_' for i in self.board]
         print(*hidden_letters)
 
