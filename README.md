@@ -1,4 +1,3 @@
 # My First Python Game
-
-### To add custom wordlists, place the text files in wordlists directory.
-Words are selected by line
+Just a very simple CLI using OOP concepts.
+![Screenshot of Hangman game](screenshots/menu.png "Hangman Menu")
